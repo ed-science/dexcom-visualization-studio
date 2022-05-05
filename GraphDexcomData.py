@@ -12,7 +12,7 @@ def convert_data(filename):
 	dexcom_entry_list = []
 	for line in lines:
 		words = list(map(int, line.split()))
-		t = datetime.datetime(*words[0:4])
+		t = datetime.datetime(*words[:4])
 		value = words[5]
 		entry = DexcomEntry(t, value)
 		dexcom_entry_list.append(entry)
